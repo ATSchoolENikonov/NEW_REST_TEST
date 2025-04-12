@@ -60,8 +60,26 @@
                     <release>17</release>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.11.2</version> <!-- Убедитесь, что версия актуальна -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>report</goal> <!-- Генерация отчета -->
+                        </goals>
+                        <phase>verify</phase> <!-- После выполнения тестов -->
+                        <configuration>
+                            <!-- Путь к результатам тестов -->
+                            <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
 
     <dependencies>
         <dependency>
